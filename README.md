@@ -7,6 +7,12 @@ For each photo, users can...
 - Edit the location (pop-up list of prior entries makes this easier)
 - Add a text comment
 - Add a voice annotation up to 5 minutes long
+- Add a "favorite" tag
+- Add a "forget this photo" tag (to delete in the future)
+
+iPad screenshot below:
+![Screenshot](https://github.com/tedbarnett/Photo-Reviewer/blob/master/photo-reviewer-screenshot.jpeg)
+
 
 Assumptions (in this version):
 - Photos are scanned and stored on Dropbox
@@ -18,3 +24,4 @@ Planned feature improvements:
 - Auto-import photos into local photo storage (Apple or Google Photos)
 - Enable a video "slide show" playing each photo with a "Ken Burns" effect with narration voiceover
 
+Contributions/updates welcomed.  Please generate a pull request for any improvements you make.
