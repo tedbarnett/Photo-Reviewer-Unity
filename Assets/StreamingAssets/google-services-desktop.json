@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "637200478618-ld8fd0f08fekt4q35rlk7l1350cp7so2.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4RbEmyhYlRubS54IQuPbj-nYf4gtN8KI"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:637200478618:ios:872578ad3105cca8c28a23", 
+        "android_client_info": {
+          "package_name": "com.BarnettLabs.PhotoReview"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "photoreviewer-94984.appspot.com", 
+    "project_id": "photoreviewer-94984", 
+    "firebase_url": "https://photoreviewer-94984.firebaseio.com", 
+    "project_number": "637200478618"
+  }
+}
