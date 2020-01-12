@@ -11,6 +11,7 @@ For each photo, users can...
 - Add a "forget this photo" tag (to delete in the future)
 
 iPad screenshot below:
+
 ![Screenshot](https://github.com/tedbarnett/Photo-Reviewer/blob/master/photo-reviewer-screenshot.jpeg)
 
 
