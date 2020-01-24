@@ -20,9 +20,10 @@ Assumptions (in this version):
 - Photo info is stored in a Google Sheet
 
 Planned feature improvements:
+- Enable speech-to-text for easier annotation.  Pull date and location info from voice annotation ("This is a photo of the kids in 1972 in Glendale...")
 - Use fast database as back-end (replace Google Sheets with Firebase or other dBase)
 - Support other storage services (Google Drive, Amazon Photos, etc.)
 - Auto-import photos into local photo storage (Apple or Google Photos)
 - Enable a video "slide show" playing each photo with a "Ken Burns" effect with narration voiceover
 
-Contributions/updates welcomed.  Please generate a pull request for any improvements you make.
+Contributions/updates welcomed.  Please contact me (or generate a pull request) for any suggestions/improvements!
