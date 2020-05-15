@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.iOS;
+    #if UNITY_IOS
+      using UnityEngine.iOS;
+    #endif
+
 using System.Collections;
 
 // Show WebCams and Microphones on an iPhone/iPad.

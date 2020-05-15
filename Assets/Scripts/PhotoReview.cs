@@ -112,10 +112,9 @@ public class PhotoReview : MonoBehaviour
         forgetPhotoToggleState = forgetPhotoToggle.GetComponent<Toggle>();
 
         MainMenuButton.GetComponent<Button>().onClick.AddListener(MainMenuClicked);
-        #if UNITY_EDITOR
-                m_PreviousButton.onClick.AddListener(() => NewPhoto(-1)); // previous button
-                m_NextButton.onClick.AddListener(() => NewPhoto(+1)); // next button
-        #endif
+
+            m_PreviousButton.onClick.AddListener(() => NewPhoto(-1)); // previous button
+            m_NextButton.onClick.AddListener(() => NewPhoto(+1)); // next button
 
 
         lightBlue = new Color(135.0f / 255.0f, 219.0f / 255.0f, 245.0f / 255.0f);
@@ -173,8 +172,10 @@ public class PhotoReview : MonoBehaviour
         DateText.text = LocationText.text = CommentsText.text = ErrorMessageText.text = "";
 
         // hide the next/previous buttons if on mobile device
-        m_PreviousButton.transform.gameObject.SetActive(false);
-        m_NextButton.transform.gameObject.SetActive(false);
+        #if UNITY_IOS
+                m_PreviousButton.transform.gameObject.SetActive(false);
+                m_NextButton.transform.gameObject.SetActive(false);
+        #endif
     }
 
     void GetEditorName()
