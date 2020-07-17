@@ -235,7 +235,7 @@ public class PhotoReview : MonoBehaviour
             editorNameTemp == "mark" ||
             editorNameTemp == "neil")
         {
-            googleSheetsForUnity.AllPhotosSheet = "all_photos";
+            //googleSheetsForUnity.AllPhotosSheet = "all_photos"; // use whatever was entered in Inspector
             basicAudio.dropBoxAudioFolder = "/PhotoReviewerAudio/";
             TestingNotice.transform.gameObject.SetActive(false);
         }
