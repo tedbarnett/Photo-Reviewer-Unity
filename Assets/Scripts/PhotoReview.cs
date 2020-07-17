@@ -455,6 +455,45 @@ public class PhotoReview : MonoBehaviour
         return PhotoRawImageObject.texture; // TODO: don't need to return this texture: delete?
     }
 
+
+    public Texture GetPhotoFromServerDesktop(string fileName) //Desktop version (loads from file system)
+    {
+        PhotoRawImage.transform.gameObject.SetActive(false); // hide photo while loading
+        String fullLocalPath = "file:///E:" + fileName;
+
+        Debug.Log("in GetPhotoFromServerDesktop, fullLocalPath = " + fullLocalPath);
+        StartCoroutine(DownloadImage(fullLocalPath));
+
+        return PhotoRawImageObject.texture; // TODO: don't need to return this texture: delete?
+    }
+
+    IEnumerator DownloadImage(string mediaURL)
+    {
+        // Local image example from http://gyanendushekhar.com/2017/07/08/load-image-runtime-unity/
+        Debug.Log("Started DownloadImage with mediaURL = " + mediaURL);
+
+        WWW www = new WWW(mediaURL);
+        while (!www.isDone)
+            yield return null;
+        //GameObject image = GameObject.Find("RawImage");
+        //image.GetComponent<RawImage>().texture = www.texture;
+        Debug.Log("Got the image: fullLocalPath = " + mediaURL);
+
+        // Successfully downloaded Photo ("texture") from local file...
+        PhotoRawImage.GetComponent<RawImage>().texture = www.texture;
+        PhotoRawImage.GetComponent<RawImage>().SizeToParent(); // see CanvasExtensions.cs for this code
+        loadedPhotoTextures[currentPhoto] = www.texture; // cache photo for future use
+        SetTextFields();
+        PhotoRawImageObject.transform.gameObject.SetActive(true); // Show the photo now that it is loaded
+        if (infoPanelsOpen) InfoPanel.transform.gameObject.SetActive(true); // show the InfoPanel again...
+
+#if UNITY_EDITOR
+            m_PreviousButton.transform.gameObject.SetActive(true);
+            m_NextButton.transform.gameObject.SetActive(true);
+#endif
+        LoadingPauseButton.transform.gameObject.SetActive(false); // unfreeze screen
+    }
+
     void CacheNextPhoto(int increment) // pre-load the next photo in the line (given latest increment and currentPhoto)
     {
         if (increment == 0) increment = +1; // assume user will load "next" photo if not otherwise specified
