@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
 public class PhotoReview : MonoBehaviour
 {
@@ -127,6 +129,8 @@ public class PhotoReview : MonoBehaviour
             editorName = "Tester";
         }
         currentPhoto = PlayerPrefs.GetInt("currentPhoto", 0);
+
+        Debug.Log(Application.persistentDataPath);
 
         SetUpScreen();
         // Set up list of valid photo extensions (supported by Unity Textures)
@@ -323,6 +327,7 @@ public class PhotoReview : MonoBehaviour
 
     public void NewPhoto(int increment) // Go to previous (-1), save (0), or next (+1) photo
     {
+        Debug.Log("in NewPhoto where increment = " + increment);
         latestIncrement = increment; // used for getting next cached photo
         if (isBusyLoading) return;
         isBusyLoading = true;
@@ -1002,6 +1007,8 @@ public class PhotoReview : MonoBehaviour
         string fileName = "all_photos_data.csv";
         string filePath = Application.persistentDataPath + "/" + fileName;
 
+        Debug.Log("in UploadDataFile(), filePath = " + filePath);
+
         //// builds a copy of current photos[] array and saves it as fileName
         //FileStream fileStream;
         //fileStream = new FileStream(filePath, FileMode.Create);
@@ -1021,6 +1028,7 @@ public class PhotoReview : MonoBehaviour
         _cancellationTokenSource = new CancellationTokenSource();
         var localFilePath = filePath;
 
+        Debug.Log("in UploadDataFile(), _uploadDropboxPath = " + _uploadDropboxPath);
         try
         {
             var metadata = await DropboxSync.Main.UploadFileAsync(localFilePath, _uploadDropboxPath, new Progress<TransferProgressReport>((report) =>
