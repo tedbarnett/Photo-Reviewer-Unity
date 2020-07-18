@@ -5235,7 +5235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReadinessMessage: {fileID: 2086278007}
-  AllPhotosSheet: all_photos_ALL
+  AllPhotosSheet: all_photos
   allPhotos: []
   slideShowPhotos: []
   PhotoReviewerLogo: {fileID: 1228813528}
@@ -12388,7 +12388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98, y: -248.58423}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715424104
@@ -13773,7 +13773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.999939}
+  m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 467.8, y: 287}
   m_Pivot: {x: 1, y: 1}
 --- !u!4 &1945517818 stripped
